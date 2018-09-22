@@ -53,7 +53,7 @@ function cmpCoords(a, b) { return a.top - b.top || a.left - b.left }
 function drawSelectionRange(cm, range, output) {
   let display = cm.display, doc = cm.doc
   let fragment = document.createDocumentFragment()
-  let padding = paddingH(cm.display), leftSide = padding.left
+  let padding = paddingH(cm.display), leftSide = 0 //[JRITTS] work around selection issues after adding a margin
   let rightSide = Math.max(display.sizerWidth, displayWidth(cm) - display.sizer.offsetLeft) - padding.right
   let docLTR = doc.direction == "ltr"
 
