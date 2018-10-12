@@ -152,7 +152,7 @@ export function updateDisplayIfNeeded(cm, update) {
   if (different) {
     display.lastWrapHeight = update.wrapperHeight
     display.lastWrapWidth = update.wrapperWidth
-    startWorker(cm, 400)
+    startWorker(cm, cm.options.workDelay)
   }
 
   display.updateLineNumbers = null

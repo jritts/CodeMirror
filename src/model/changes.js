@@ -242,7 +242,7 @@ function makeChangeSingleDocInEditor(cm, change, spans) {
   }
 
   retreatFrontier(doc, from.line)
-  startWorker(cm, 400)
+  startWorker(cm, cm.options.workDelay)
 
   let lendiff = change.text.length - (to.line - from.line) - 1
   // Remember that these lines changed, for updating the display
